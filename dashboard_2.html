@@ -34,7 +34,10 @@
 
 </head>
 <body>
-
+<script>
+  var v_dpTotalCount = 3;
+  var v_dpCounter = 0;
+</script>
 <div class="wrapper">
     <div class="sidebar" data-background-color="black" data-active-color="info">
 
@@ -108,13 +111,17 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
 						<li>
-                            <a href="#">
+                            <a href="home.html">
 							
-								<p>
-							
-								</p>
+								<p>home	</p>
                             </a>
                         </li>
+						<li>
+                            <a href="index.html">
+							
+								<p>logout</p>
+                            </a>
+                        </li>	
                     </ul>
 
                 </div>
@@ -255,7 +262,20 @@
 
     </div>
 </div>
+<script type="text/javascript">
+document.addEventListener('DataPageReady', function (v_e) 
+  {try{document.getElementsByName('cb-auth-box')[v_dpCounter].style.display = "none";}catch(v_e){}
+    v_dpCounter +=1;
+	  if( v_dpTotalCount <= v_dpCounter) 
+     {if(document.getElementsByName("cb-auth-box")) 
+        {var v_box = document.getElementsByName("cb-auth-box").length-1 ;
+	       for (i=0; i < v_box; i++) { document.getElementsByName("cb-auth-box")[i].style.display = "none" ; }
+		try{document.getElementsByName("cb-auth-box")[v_box].style.display = "" ;}catch(v_e){}
+	       }
+	    }
+	 });
 
+</script>
 
 </body>
 

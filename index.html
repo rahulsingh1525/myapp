@@ -34,7 +34,10 @@
 
 </head>
 <body>
-
+<script>
+  var v_dpTotalCount = 3;
+  var v_dpCounter = 0;
+</script>
 <div class="wrapper">
     <div class="sidebar" data-background-color="black" data-active-color="info">
 
@@ -95,7 +98,7 @@
 			<span class="navbar-toggler-bar bar2"></span>
 			<span class="navbar-toggler-bar bar3"></span>
 			</button></div>
-			<a href="/" class="navbar-brand">Data Analytics Platform</a>
+			<a href="" class="navbar-brand">Data Analytics Platform</a>
 			</div>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle">
@@ -153,7 +156,20 @@
 
     </div>
 </div>
+<script type="text/javascript">
+document.addEventListener('DataPageReady', function (v_e) 
+  {try{document.getElementsByName('cb-auth-box')[v_dpCounter].style.display = "none";}catch(v_e){}
+    v_dpCounter +=1;
+	  if( v_dpTotalCount <= v_dpCounter) 
+     {if(document.getElementsByName("cb-auth-box")) 
+        {var v_box = document.getElementsByName("cb-auth-box").length-1 ;
+	       for (i=0; i < v_box; i++) { document.getElementsByName("cb-auth-box")[i].style.display = "none" ; }
+		try{document.getElementsByName("cb-auth-box")[v_box].style.display = "" ;}catch(v_e){}
+	       }
+	    }
+	 });
 
+</script>
 
 </body>
 
